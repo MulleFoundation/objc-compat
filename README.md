@@ -1,6 +1,6 @@
 # objc-compat
 
-🔗 Glue for Objective-C code for using various runtimes
+🔗 Glue for Objective-C code to support different runtimes
 
 This library adds a few functions to portably write various somewhat tricky
 topics such as variable arguments calls.
@@ -44,7 +44,7 @@ Function        | Return Value | Arguments
 > Casting to BOOL should not be done like this
 > `(BOOL) objc_callIMP( self, @selector( foo))`, since the
 > compiler may potentially use the wrong bits .
-> 
+>
 
 ## Variable arguments
 
