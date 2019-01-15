@@ -6,7 +6,7 @@
  *
  *  version:  major, minor, patch
  */
-#define OBJC_COMPAT_VERSION  ((0 << 20) | (1 << 8) | 0)
+#define OBJC_COMPAT_VERSION  ((0 << 20) | (14 << 8) | 0)
 
 
 static inline unsigned int   objc_compat_get_version_major( void)
