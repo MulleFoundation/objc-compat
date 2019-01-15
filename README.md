@@ -79,6 +79,7 @@ with autorelease semantics instead.
 Function        | Return Value | Arguments
 ----------------|--------------|----------------
 `objc_alloca`   | void  *      | bytes to allocate.
+
 To portably use alloca, there exists a function called `objc_alloca`, it is
 supposed to do "the right thing", depending on platform. Since it may use
 `NSMutableData`, you need this class defined somewhere.
