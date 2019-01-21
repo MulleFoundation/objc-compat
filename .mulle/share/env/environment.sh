@@ -21,9 +21,9 @@ fi
 if [ -z "${MULLE_HOSTNAME}" ]
 then
    MULLE_HOSTNAME="`PATH=/bin:/usr/bin:/sbin:/usr/sbin hostname -s`"
-   if [ "t" = '.' ]
+   if [ "${MULLE_HOSTNAME:0:1}" = '.' ]
    then
-      MULLE_HOSTNAME="_terodde"
+      MULLE_HOSTNAME="_walitza"
    fi
    export MULLE_HOSTNAME
 fi
