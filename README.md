@@ -54,7 +54,39 @@ with `...` or `va_list`.
 
 C functions will still use `<stdarg.h>`.
 
-Note that `va_list` and `objc_va_list` are different types and not compatible!
+Note that `va_list` and `objc_va_list` are different types and not compatible
+
+`va_list` Function | Portable function | Description
+-------------------|-------------------|-------------------
+`va_copy`          | `objc_va_copy`    | copy variable arguments
+`va_end`           | `objc_va_end`     | end variable arguments
+`va_start`         | `objc_va_start`   | start variable arguments
+
+Variable arguments are traversed by giving a "type" parameter ala `va_arg`.
+The portable functions need to specify the actual type family.
+
+e.g. `va_arg( args, int)` vs. `objc_va_next_integer( args, int)`:
+
+
+Access function            | Description
+---------------------------|-------------------------------------
+`objc_va_next_fp`          | get a floating point argument of type `double` or `float`
+`objc_va_next_integer`     | get an integer argument of any signed or unsigned C integer type
+`objc_va_next_long_double` | get a floating point variable of type `long double`
+`objc_va_next_object`      | get an object argument of given type 
+`objc_va_next_pointer`     | get any kind of pointer (except function pointer) 
+`objc_va_next_struct`      | get any kind of `struct`
+`objc_va_next_union`       | get any kind of `union`
+
+
+Thre are some shortcut functions for very common argument types, where you can omit the type parameter :
+
+Access function              | Description
+-----------------------------|-------------------------------------
+`objc_va_next_char_pointer`  | get a `char *`
+`objc_va_next_double`        | get a `double`
+`objc_va_next_id`            | get a `id`
+`objc_va_next_int`           | get an `int`
 
 
 ## In memory instance allocation
