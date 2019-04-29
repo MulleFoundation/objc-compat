@@ -151,6 +151,3 @@ with autorelease semantics instead.  Since it may use
 Function        | Return Value | Arguments
 ----------------|--------------|----------------
 `objc_alloca`   | void  *      | bytes to allocate.
-
-
-
