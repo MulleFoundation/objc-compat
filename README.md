@@ -89,6 +89,24 @@ Access function              | Description
 `objc_va_next_int`           | get an `int`
 
 
+#### Example:
+
+```
+- (void) foo:(id) arg, ....
+{
+   NSUInteger   n;
+   NSString     *s;
+
+   objc_va_list  args;
+  
+   objc_va_start( args, arg);
+   s = objc_va_next_object( args, NSString *);
+   n = objc_va_next_integer( args, NSInteger);
+   objc_va_end( args);  
+}
+```
+  
+
 ## In memory instance allocation
 
 If you are allocating instances "manually", you need to use these two functions
@@ -99,20 +117,31 @@ Function               | Description
 `objc_getInstance`     | Convert a block of memory to an object pointer
 `object_getAlloc`      | Retrieve block of memory from the object pointer
 
+#### Example:
 
+```
+   len = class_getInstanceSize( cls);
+   p   = calloc( 1, len);
+   obj = objc_getInstance( p);  // uninitialized, no isa!!
+   p   = object_getAlloc( obj);
+   free( p);
+```
+  
 
 ## Stack allocation
 
-See alloca(3) for the alloca semantics. objc_alloca is different though, the
-alloca block, if it is too large to be put on the stack, will be allocated
-with autorelease semantics instead.
+To portably use `alloca`, there exists a function called `objc_alloca`, it is
+supposed to do "the right thing", depending on platform.
+
+See alloca(3) for the alloca semantics. `objc_alloca` is different though. If
+the alloca block is too large to be put on the stack, it will be allocated
+with autorelease semantics instead.  Since it may use
+`NSMutableData` for this, you need this class defined somewhere.
 
 
 Function        | Return Value | Arguments
 ----------------|--------------|----------------
 `objc_alloca`   | void  *      | bytes to allocate.
 
-To portably use alloca, there exists a function called `objc_alloca`, it is
-supposed to do "the right thing", depending on platform. Since it may use
-`NSMutableData`, you need this class defined somewhere.
+
 
