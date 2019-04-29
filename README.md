@@ -49,12 +49,11 @@ Function        | Return Value | Arguments
 ## Variable arguments
 
 The various `va_list`, `va_start`functions and types are prefixed with `objc_`. These are to be used
-instead of the `<stdarg.h>` counterparts for Objective-C functions accepting variable arguments
+instead of the `<stdarg.h>` counterparts for Objective-C methods accepting variable arguments
 with `...` or `va_list`.
 
-C functions will still use `<stdarg.h>`.
-
-Note that `va_list` and `objc_va_list` are different types and not compatible
+C functions will still use `<stdarg.h>`. Note that `va_list` and `objc_va_list` are different types and 
+not compatible
 
 `va_list` Function | Portable function | Description
 -------------------|-------------------|-------------------
@@ -62,8 +61,8 @@ Note that `va_list` and `objc_va_list` are different types and not compatible
 `va_end`           | `objc_va_end`     | end variable arguments
 `va_start`         | `objc_va_start`   | start variable arguments
 
-Variable arguments are traversed by giving a "type" parameter ala `va_arg`.
-The portable functions need to specify the actual type family.
+Variable arguments are traversed by giving a type parameter à la `va_arg`.
+The various portable functions specify implicitly the actual type family:
 
 e.g. `va_arg( args, int)` vs. `objc_va_next_integer( args, int)`:
 
@@ -88,24 +87,34 @@ Access function              | Description
 `objc_va_next_id`            | get a `id`
 `objc_va_next_int`           | get an `int`
 
+To write portable code that accepts `objc_va_list` use the provided `#define objcVarargList` instead of
+`arguments:` on Apple or `mulleVarargList;` on MulleObjC.
+
 
 #### Example:
 
+
 ```
-- (void) foo:(id) arg, ....
+- (void) foo:(id) arg, ...
+objcVarargList:(objc_va_list) args
 {
    NSUInteger   n;
    NSString     *s;
 
+   s = objc_va_next_object( args, NSString *);
+   n = objc_va_next_integer( args, NSInteger);
+}
+
+- (void) foo:(id) arg, ...
+{
    objc_va_list  args;
   
    objc_va_start( args, arg);
-   s = objc_va_next_object( args, NSString *);
-   n = objc_va_next_integer( args, NSInteger);
+   [self foo:arg objcVarargList:args];
    objc_va_end( args);  
 }
 ```
-  
+
 
 ## In memory instance allocation
 
