@@ -34,6 +34,8 @@ static inline unsigned int   objc_compat_get_version_patch( void)
 # include <MulleObjC/mulle-objc.h>
 # include <mulle-objc-compat/mulle-objc-compat.h>
 # include "mulle-alloca-glue.h"
+# include "mulle-isa-glue.h"
+# include "mulle-compiler-glue.h"
 # include "mulle-object-glue.h"
 # include "mulle-message-glue.h"
 # include "mulle-vararg-glue.h"
@@ -44,6 +46,7 @@ static inline unsigned int   objc_compat_get_version_patch( void)
 #  include <objc/objc-api.h>
 #  include <objc/message.h>
 #  include "apple-alloca-glue.h"
+#  include "apple-isa-glue.h"
 #  include "apple-object-glue.h"
 #  include "apple-message-glue.h"
 #  include "apple-vararg-glue.h"
