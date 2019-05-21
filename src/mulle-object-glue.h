@@ -18,4 +18,20 @@ static inline void  *object_getAlloc( id obj)
                : (void *) obj);
 }
 
+
+static inline void  *object_getExtraBytes( id obj)
+{
+   void      *allocation;
+   size_t    size;
+
+   if( ! obj)
+      return( obj);
+
+   allocation = object_getAlloc( obj);
+   size       = class_getInstanceSize( object_getClass( obj));
+   return( &((char *) allocation)[ size]);
+}
+
+
+
 #endif
