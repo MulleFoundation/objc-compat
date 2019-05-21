@@ -9,12 +9,20 @@ set( INCLUDE_DIRS
 src
 )
 
+set( PRIVATE_HEADERS
+src/import-private.h
+)
+
 set( PUBLIC_HEADERS
 src/apple-alloca-glue.h
+src/apple-isa-glue.h
 src/apple-message-glue.h
 src/apple-object-glue.h
 src/apple-vararg-glue.h
+src/import.h
 src/mulle-alloca-glue.h
+src/mulle-compiler-glue.h
+src/mulle-isa-glue.h
 src/mulle-message-glue.h
 src/mulle-object-glue.h
 src/mulle-vararg-glue.h
