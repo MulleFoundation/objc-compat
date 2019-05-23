@@ -1,3 +1,11 @@
+## 0.15.0
+
+* added isa glue
+* added `object_getExtraBytes`
+* added isa
+* added various method callers
+
+
 ### 0.14.1
 
 * remove old and disruptive headers
