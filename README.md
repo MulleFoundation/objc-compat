@@ -70,12 +70,71 @@ Function                | Return Value | Arguments
 ## Variable arguments
 
 The various `va_list`, `va_start`functions and types are prefixed with `objc_`. These are to be used
-instead of the `<stdarg.h>` counterparts for Objective-C functions accepting variable arguments
+instead of the `<stdarg.h>` counterparts for Objective-C methods accepting variable arguments
 with `...` or `va_list`.
 
-C functions will still use `<stdarg.h>`.
+C functions will still use `<stdarg.h>`. Note that `va_list` and `objc_va_list` are different types and 
+not compatible
 
-Note that `va_list` and `objc_va_list` are different types and not compatible!
+`va_list` Function | Portable function | Description
+-------------------|-------------------|-------------------
+`va_copy`          | `objc_va_copy`    | copy variable arguments
+`va_end`           | `objc_va_end`     | end variable arguments
+`va_start`         | `objc_va_start`   | start variable arguments
+
+Variable arguments are traversed by giving a type parameter à la `va_arg`.
+The various portable functions specify implicitly the actual type family:
+
+e.g. `va_arg( args, int)` vs. `objc_va_next_integer( args, int)`:
+
+
+Access function            | Description
+---------------------------|-------------------------------------
+`objc_va_next_fp`          | get a floating point argument of type `double` or `float`
+`objc_va_next_integer`     | get an integer argument of any signed or unsigned C integer type
+`objc_va_next_long_double` | get a floating point variable of type `long double`
+`objc_va_next_object`      | get an object argument of given type 
+`objc_va_next_pointer`     | get any kind of pointer (except function pointer) 
+`objc_va_next_struct`      | get any kind of `struct`
+`objc_va_next_union`       | get any kind of `union`
+
+
+Thre are some shortcut functions for very common argument types, where you can omit the type parameter :
+
+Access function              | Description
+-----------------------------|-------------------------------------
+`objc_va_next_char_pointer`  | get a `char *`
+`objc_va_next_double`        | get a `double`
+`objc_va_next_id`            | get a `id`
+`objc_va_next_int`           | get an `int`
+
+To write portable code that accepts `objc_va_list` use the provided `#define objcVarargList` instead of
+`arguments:` on Apple or `mulleVarargList;` on MulleObjC.
+
+
+#### Example:
+
+
+```
+- (void) foo:(id) arg, ...
+objcVarargList:(objc_va_list) args
+{
+   NSUInteger   n;
+   NSString     *s;
+
+   s = objc_va_next_object( args, NSString *);
+   n = objc_va_next_integer( args, NSInteger);
+}
+
+- (void) foo:(id) arg, ...
+{
+   objc_va_list  args;
+  
+   objc_va_start( args, arg);
+   [self foo:arg objcVarargList:args];
+   objc_va_end( args);  
+}
+```
 
 
 ## In memory instance allocation
@@ -103,20 +162,28 @@ static void  get_extra_bytes( id self)
 }
 ```
 
+#### Example:
 
+```
+   len = class_getInstanceSize( cls);
+   p   = calloc( 1, len);
+   obj = objc_getInstance( p);  // uninitialized, no isa!!
+   p   = object_getAlloc( obj);
+   free( p);
+```
+  
 
 ## Stack allocation
 
-See alloca(3) for the alloca semantics. objc_alloca is different though, the
-alloca block, if it is too large to be put on the stack, will be allocated
-with autorelease semantics instead.
+To portably use `alloca`, there exists a function called `objc_alloca`, it is
+supposed to do "the right thing", depending on platform.
+
+See alloca(3) for the alloca semantics. `objc_alloca` is different though. If
+the alloca block is too large to be put on the stack, it will be allocated
+with autorelease semantics instead.  Since it may use
+`NSMutableData` for this, you need this class defined somewhere.
 
 
 Function        | Return Value | Arguments
 ----------------|--------------|----------------
 `objc_alloca`   | void  *      | bytes to allocate.
-
-To portably use alloca, there exists a function called `objc_alloca`, it is
-supposed to do "the right thing", depending on platform. Since it may use
-`NSMutableData`, you need this class defined somewhere.
-
