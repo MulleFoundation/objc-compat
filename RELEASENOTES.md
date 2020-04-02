@@ -1,3 +1,8 @@
+## 0.17.0
+
+* adapt to changes in MulleObjC
+
+
 ## 0.16.0
 
 * new release

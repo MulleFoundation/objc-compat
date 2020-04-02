@@ -8,12 +8,12 @@
 // autoreleasepool and not the stack frame.
 //
 #if DEBUG  // coz the stupid debugger trips up on alloca stack frames
-# define objc_alloca( size)  MulleObjCAutoreleasedCalloc( 1, (size))
+# define objc_alloca( size)  MulleObjCCallocAutoreleased( 1, (size))
 #else
 # define objc_alloca( size)            \
   ( (size) <= (sizeof( double) * 32)   \
       ? alloca( (size))                \
-      : MulleObjCAutoreleasedCalloc( 1, (size))
+      : MulleObjCCallocAutoreleased( 1, (size))
 #endif
 
 #endif
