@@ -31,7 +31,7 @@ if( STANDALONE)
    endif()
 
    if( NOT STANDALONE_DEFINITIONS)
-      set( STANDALONE_DEFINITIONS ${objc_compat_DEFINITIONS})
+      set( STANDALONE_DEFINITIONS ${OBJC_COMPAT_DEFINITIONS})
    endif()
 
    #
