@@ -43,7 +43,7 @@ static inline BOOL   objc_msgSendBOOLReturn( id self, SEL _cmd, id a)
    //
    // as BOOL is an int in MulleObjC (actually an enum)
    // the conversion back "should" be harmless
-   return( (BOOL) (int) MulleObjCObjectPerformSelector( self, _cmd, a));
+   return( (BOOL) (intptr_t) MulleObjCObjectPerformSelector( self, _cmd, a));
 }
 
 static inline int   objc_msgSendIntReturn( id self, SEL _cmd, id a)
@@ -51,7 +51,7 @@ static inline int   objc_msgSendIntReturn( id self, SEL _cmd, id a)
    //
    // cast objc_msgSend into a function returning an int
    //
-   return( (int) MulleObjCObjectPerformSelector( self, _cmd, a));
+   return( (int) (intptr_t) MulleObjCObjectPerformSelector( self, _cmd, a));
 }
 
 
