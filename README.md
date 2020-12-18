@@ -8,6 +8,11 @@ topics such as variable arguments calls.
 It is also the place that includes the required runtime headers depending on
 platform.
 
+[mulle-gdb](https://github.com/codeon-nat/mulle-gdb) recognizes a lot of the
+symbols contained in `objc-compat`. So if you link **objc-compat** (with
+mulle-sde dependency unmark `no-all-load`), then you'll have a much easier
+time debugging your executables.
+
 
 Runtime       |  Selection
 --------------|---------------------
@@ -73,7 +78,7 @@ The various `va_list`, `va_start`functions and types are prefixed with `objc_`. 
 instead of the `<stdarg.h>` counterparts for Objective-C methods accepting variable arguments
 with `...` or `va_list`.
 
-C functions will still use `<stdarg.h>`. Note that `va_list` and `objc_va_list` are different types and 
+C functions will still use `<stdarg.h>`. Note that `va_list` and `objc_va_list` are different types and
 not compatible
 
 `va_list` Function | Portable function | Description
@@ -93,8 +98,8 @@ Access function            | Description
 `objc_va_next_fp`          | get a floating point argument of type `double` or `float`
 `objc_va_next_integer`     | get an integer argument of any signed or unsigned C integer type
 `objc_va_next_long_double` | get a floating point variable of type `long double`
-`objc_va_next_object`      | get an object argument of given type 
-`objc_va_next_pointer`     | get any kind of pointer (except function pointer) 
+`objc_va_next_object`      | get an object argument of given type
+`objc_va_next_pointer`     | get any kind of pointer (except function pointer)
 `objc_va_next_struct`      | get any kind of `struct`
 `objc_va_next_union`       | get any kind of `union`
 
@@ -129,10 +134,10 @@ objcVarargList:(objc_va_list) args
 - (void) foo:(id) arg, ...
 {
    objc_va_list  args;
-  
+
    objc_va_start( args, arg);
    [self foo:arg objcVarargList:args];
-   objc_va_end( args);  
+   objc_va_end( args);
 }
 ```
 
@@ -171,7 +176,7 @@ static void  get_extra_bytes( id self)
    p   = object_getAlloc( obj);
    free( p);
 ```
-  
+
 
 ## Stack allocation
 
