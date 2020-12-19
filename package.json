@@ -1,0 +1,16 @@
+{
+   "name" : "objc-compat",
+   "version" : "0.18.0",
+   "description" : "🔗 Glue for Objective-C code to support different runtimes",
+   "homepage" : "https://github.com/MulleFoundation/objc-compat",
+   "bugs" : "https://github.com/MulleFoundation/objc-compat/issues",
+   "keywords" : [],
+   "license" : "UNLICENSED",
+   "repository" : {
+      "type" : "git",
+      "url" : "MulleFoundation/objc-compat"
+   },
+   "dependencies" : {
+      "MulleObjC" : "mulle-objc/MulleObjC"
+   }
+}
