@@ -2,6 +2,8 @@
 #define mulle_object_glue_h__
 
 
+typedef Protocol  *PROTOCOL;
+
 //
 // if you allocate instancesize amount of memory, use this to get the pointer
 // to the instance
@@ -31,7 +33,5 @@ static inline void  *object_getExtraBytes( id obj)
    size       = class_getInstanceSize( object_getClass( obj));
    return( &((char *) allocation)[ size]);
 }
-
-
 
 #endif
