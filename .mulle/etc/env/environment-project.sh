@@ -7,25 +7,25 @@ export PROJECT_NAME="objc-compat"
 #
 #
 #
-export PROJECT_C_NAME="objc-compat"
 
-
-#
-#
-#
-export PROJECT_IDENTIFIER="objc_compat"
 
 
 #
 #
 #
-export PROJECT_DOWNCASE_IDENTIFIER="objc_compat"
 
 
+
 #
 #
 #
-export PROJECT_UPCASE_IDENTIFIER="OBJC_COMPAT"
+
+
+
+#
+#
+#
+
 
 
 #

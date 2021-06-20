@@ -1,9 +1,11 @@
+#ifndef objc_compat_h__
+#define objc_compat_h__
 /*
  *  (c) 2018 nat
  *
  *  version:  major, minor, patch
  */
-#define OBJC_COMPAT_VERSION  ((0 << 20) | (18 << 8) | 0)
+#define OBJC_COMPAT_VERSION  ((0 << 20) | (19 << 8) | 0)
 
 
 static inline unsigned int   objc_compat_get_version_major( void)
@@ -41,12 +43,12 @@ static inline unsigned int   objc_compat_get_version_patch( void)
 # include "mulle-vararg-glue.h"
 #else
 # if defined( __APPLE__) && ! defined( GNUSTEP)
+#  include "apple-isa-glue.h"  // need defines ahead
 #  include <objc/objc.h>
 #  include <objc/objc-runtime.h>
 #  include <objc/objc-api.h>
 #  include <objc/message.h>
 #  include "apple-alloca-glue.h"
-#  include "apple-isa-glue.h"
 #  include "apple-object-glue.h"
 #  include "apple-message-glue.h"
 #  include "apple-vararg-glue.h"
@@ -55,4 +57,5 @@ static inline unsigned int   objc_compat_get_version_patch( void)
 # endif
 #endif
 
+#endif
 

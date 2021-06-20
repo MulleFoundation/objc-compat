@@ -1,7 +1,7 @@
 #ifndef apple_vararg_glue_h__
 #define apple_vararg_glue_h__
 
-#include <stdarg/stdarg.h>
+#include <stdarg.h>
 
 typedef va_list   objc_va_list;
 
