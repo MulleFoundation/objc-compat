@@ -1,6 +1,12 @@
 ## 0.19.0
 
-* Various small improvements
+* fix wrong ``<stdarg.h>`` inclusion on macOS
+* supoort for ``objc_alloca`` on macOS
+* define ``OBJC_ISA_AVAILABILITY`` on macOS
+* added `typedef Protocol  *PROTOCOL;`
+* adapt to changes in Apple ``objc_msgSend``
+* add ``object_getExtraBytes`` for macOS
+* add `MulleObjCCopyObjects` for macOS (experimental)
 
 
 ## 0.18.0
