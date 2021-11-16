@@ -206,7 +206,7 @@ Function        | Return Value | Arguments
 Use [mulle-sde](//github.com/mulle-sde) to add objc-compat to your project:
 
 ``` console
-mulle-sde dependency add --c --github --marks no-header MulleFoundation objc-compat
+mulle-sde dependency add --objc --github --marks no-header MulleFoundation objc-compat
 ```
 
 ## Install
