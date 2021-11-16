@@ -13,7 +13,7 @@
 # define objc_alloca( size)            \
   ( (size) <= (sizeof( double) * 32)   \
       ? alloca( (size))                \
-      : MulleObjCCallocAutoreleased( 1, (size))
+      : MulleObjCCallocAutoreleased( 1, (size)))
 #endif
 
 #endif

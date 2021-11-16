@@ -16,5 +16,9 @@
  */
 
 #import "_objc-compat-import.h"
+#ifndef OBJC_COMPAT_EXTERN_GLOBAL
+# define OBJC_COMPAT_EXTERN_GLOBAL MULLE_C_EXTERN_GLOBAL
+#endif
+
 
 /* You can add some more import statements here */
