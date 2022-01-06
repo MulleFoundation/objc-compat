@@ -53,7 +53,7 @@ static inline BOOL   objc_msgSendBOOLReturn( id self, SEL _cmd, id a)
    //
    // cast objc_msgSend into a function returning a BOOL
    //
-   return( ((BOOL (*)( id, SEL, ...)) objc_msgSend) ( self, _cmd, a));
+   return( ((BOOL (*)( id, SEL, id)) objc_msgSend) ( self, _cmd, a));
 }
 
 static inline BOOL   objc_msgSendIntReturn( id self, SEL _cmd, id a)
@@ -61,7 +61,7 @@ static inline BOOL   objc_msgSendIntReturn( id self, SEL _cmd, id a)
    //
    // cast objc_msgSend into a function returning an int
    //
-   return( ((int (*)( id, SEL, ...)) objc_msgSend) ( self, _cmd, a));
+   return( ((int (*)( id, SEL, id)) objc_msgSend) ( self, _cmd, a));
 }
 
 
@@ -110,7 +110,7 @@ static inline BOOL   objc_callIMPBOOLReturn( IMP imp, id self, SEL _cmd, id a)
    //
    // cast into a function returning a BOOL
    //
-   return( ((BOOL (*)( id, SEL, ...)) imp)( self, _cmd, a));
+   return( ((BOOL (*)( id, SEL, id)) imp)( self, _cmd, a));
 }
 
 
@@ -119,7 +119,7 @@ static inline int   objc_callIMPIntReturn( IMP imp, id self, SEL _cmd, id a)
    //
    // cast into a function returning a BOOL
    //
-   return( ((int (*)( id, SEL, ...)) imp)( self, _cmd, a));
+   return( ((int (*)( id, SEL, id)) imp)( self, _cmd, a));
 }
 
 
