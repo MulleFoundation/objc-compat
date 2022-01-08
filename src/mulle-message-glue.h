@@ -2,6 +2,8 @@
 #define mulle_message_glue_h__
 
 
+#pragma clang diagnostic ignored "-Wdeprecated-objc-pointer-introspection"
+
 #include <stdint.h>
 
 
@@ -56,7 +58,7 @@ static inline BOOL   objc_msgSendBOOLReturn( id self, SEL _cmd, id a)
    //
    // as BOOL is an int in MulleObjC (actually an enum)
    // the conversion back "should" be harmless
-   return( (BOOL) (intptr_t) MulleObjCObjectPerformSelector( self, _cmd, a));
+   return( (BOOL) (((intptr_t) MulleObjCObjectPerformSelector( self, _cmd, a)) & 0xFF));
 }
 
 static inline int   objc_msgSendIntReturn( id self, SEL _cmd, id a)
@@ -110,17 +112,15 @@ static inline BOOL   objc_callIMPBOOLReturn( IMP imp, id self, SEL _cmd, id a)
 {
    //
    // as BOOL is an int in MulleObjC (actually an enum)
-   // the conversion back "should" be harmless
-   //
-   return( (BOOL) (intptr_t) MulleObjCIMPCall( imp, self, _cmd, a));
+   // the conversion back "should" be harmless, but we cut off to 0xFF
+   // for compatibility
+   return( (BOOL) (((intptr_t) MulleObjCIMPCall( imp, self, _cmd, a)) & 0xFF));
 }
 
-static inline BOOL   objc_callIMPIntReturn( IMP imp, id self, SEL _cmd, id a)
+
+static inline int   objc_callIMPIntReturn( IMP imp, id self, SEL _cmd, id a)
 {
-   //
-   // as BOOL is an int in MulleObjC (actually an enum)
-   // the conversion back "should" be harmless
-   return( (BOOL) (intptr_t) MulleObjCIMPCall( imp, self, _cmd, a));
+   return( (int) (intptr_t) MulleObjCIMPCall( imp, self, _cmd, a));
 }
 
 

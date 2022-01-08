@@ -57,5 +57,12 @@ static inline unsigned int   objc_compat_get_version_patch( void)
 # endif
 #endif
 
+
+#ifdef __has_include
+# if __has_include( "_objc-compat-versioncheck.h")
+#  include "_objc-compat-versioncheck.h"
+# endif
+#endif
+
 #endif
 
