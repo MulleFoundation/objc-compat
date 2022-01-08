@@ -52,7 +52,7 @@ static inline BOOL   objc_msgSendBOOLReturn( id self, SEL _cmd, id a)
 {
    //
    // cast objc_msgSend into a function returning a BOOL
-   //
+   // cut off leading junk for compatiblity
    return( ((BOOL (*)( id, SEL, id)) objc_msgSend) ( self, _cmd, a));
 }
 
