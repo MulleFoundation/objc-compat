@@ -16,8 +16,14 @@
  */
 
 #import "_objc-compat-import.h"
-#ifndef OBJC_COMPAT_EXTERN_GLOBAL
-# define OBJC_COMPAT_EXTERN_GLOBAL MULLE_C_EXTERN_GLOBAL
+#ifdef OBJC_COMPAT_BUILD
+# define OBJC_COMPAT_GLOBAL    MULLE_C_GLOBAL
+#else
+# if defined( OBJC_COMPAT_INCLUDE_DYNAMIC) || (defined( MULLE_INCLUDE_DYNAMIC) && ! defined( OBJC_COMPAT_INCLUDE_STATIC))
+#  define OBJC_COMPAT_GLOBAL   MULLE_C_EXTERN_GLOBAL
+# else
+#  define OBJC_COMPAT_GLOBAL   extern
+# endif
 #endif
 
 
