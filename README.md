@@ -8,7 +8,7 @@ topics such as variable arguments calls.
 It is also the place that includes the required runtime headers depending on
 platform.
 
-[mulle-gdb](https://github.com/codeon-nat/mulle-gdb) recognizes a lot of the
+[mulle-gdb](//github.com/mulle-cc/mulle-gdb) recognizes a lot of the
 symbols contained in `objc-compat`. So if you link **objc-compat** (with
 mulle-sde dependency unmark `no-all-load`), then you'll have a much easier
 time debugging your executables.
