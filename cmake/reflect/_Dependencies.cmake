@@ -15,6 +15,7 @@ endif()
 # Generated from sourcetree: AA752614-F078-4EE6-9F21-E234626335B7;mulle-objc-compat;no-all-load,no-cmake-loader,no-cmake-searchpath,no-import,no-platform-darwin;
 # Disable with : `mulle-sourcetree mark mulle-objc-compat no-link`
 # Disable for this platform: `mulle-sourcetree mark mulle-objc-compat no-cmake-platform-${MULLE_UNAME}`
+# Disable for a sdk: `mulle-sourcetree mark mulle-objc-compat no-cmake-sdk-<name>`
 #
 if( NOT ${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
    if( NOT MULLE_OBJC_COMPAT_LIBRARY)
@@ -81,4 +82,4 @@ if( NOT ${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
          message( FATAL_ERROR "MULLE_OBJC_COMPAT_LIBRARY was not found")
       endif()
    endif()
-endif()
+   endif()

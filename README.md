@@ -2,6 +2,8 @@
 
 #### 🔗 Glue for Objective-C code to support different Foundations
 
+> **NOTE:** This is a header-only library. It will not be "buildable" in CLion.
+
 This library adds a few functions to portably write various somewhat tricky
 topics such as variable arguments calls. 
 
