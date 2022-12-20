@@ -8,7 +8,7 @@
    "license" : "UNLICENSED",
    "repository" : {
       "type" : "git",
-      "url" : "MulleFoundation/objc-compat"
+      "url" : "github:MulleFoundation/objc-compat"
    },
    "dependencies" : {
       "MulleObjC" : "git://github.com/mulle-objc/MulleObjC",
