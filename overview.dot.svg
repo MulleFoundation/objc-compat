@@ -12,32 +12,38 @@
 <!-- objc&#45;compat -->
 <g id="node1" class="node">
 <title>objc&#45;compat</title>
-<polygon fill="yellow" stroke="black" points="166.5,-108 63.5,-108 63.5,-72 166.5,-72 166.5,-108"/>
-<text text-anchor="middle" x="115" y="-86.3" font-family="Times,serif" font-size="14.00">objc&#45;compat</text>
-</g>
-<!-- MulleObjC -->
-<g id="node2" class="node">
-<title>MulleObjC</title>
-<polygon fill="lightgrey" stroke="black" points="92,-36 0,-36 0,0 92,0 92,-36"/>
-<text text-anchor="middle" x="46" y="-14.3" font-family="Times,serif" font-size="14.00">MulleObjC</text>
-</g>
-<!-- objc&#45;compat&#45;&gt;MulleObjC -->
-<g id="edge1" class="edge">
-<title>objc&#45;compat&#45;&gt;MulleObjC</title>
-<path fill="none" stroke="black" d="M97.94,-71.7C89.5,-63.14 79.18,-52.66 69.96,-43.3"/>
-<polygon fill="black" stroke="black" points="72.37,-40.77 62.86,-36.1 67.39,-45.68 72.37,-40.77"/>
+<polygon fill="yellow" stroke="black" points="194,-108 91,-108 91,-72 194,-72 194,-108"/>
+<text text-anchor="middle" x="142.5" y="-86.3" font-family="Times,serif" font-size="14.00">objc&#45;compat</text>
 </g>
 <!-- mulle&#45;objc&#45;compat -->
-<g id="node3" class="node">
+<g id="node2" class="node">
 <title>mulle&#45;objc&#45;compat</title>
-<polygon fill="lightgrey" stroke="black" points="257.5,-36 110.5,-36 110.5,0 257.5,0 257.5,-36"/>
-<text text-anchor="middle" x="184" y="-14.3" font-family="Times,serif" font-size="14.00">mulle&#45;objc&#45;compat</text>
+<g id="a_node2"><a xlink:href="https://github.com/mulle-objc/mulle-objc-compat" xlink:title="mulle&#45;objc&#45;compat">
+<polygon fill="lightgrey" stroke="black" points="147,-36 0,-36 0,0 147,0 147,-36"/>
+<text text-anchor="middle" x="73.5" y="-14.3" font-family="Times,serif" font-size="14.00">mulle&#45;objc&#45;compat</text>
+</a>
+</g>
 </g>
 <!-- objc&#45;compat&#45;&gt;mulle&#45;objc&#45;compat -->
 <g id="edge2" class="edge">
 <title>objc&#45;compat&#45;&gt;mulle&#45;objc&#45;compat</title>
-<path fill="none" stroke="black" d="M132.06,-71.7C140.5,-63.14 150.82,-52.66 160.04,-43.3"/>
-<polygon fill="black" stroke="black" points="162.61,-45.68 167.14,-36.1 157.63,-40.77 162.61,-45.68"/>
+<path fill="none" stroke="black" d="M125.44,-71.7C117,-63.14 106.68,-52.66 97.46,-43.3"/>
+<polygon fill="black" stroke="black" points="99.87,-40.77 90.36,-36.1 94.89,-45.68 99.87,-40.77"/>
+</g>
+<!-- MulleObjC -->
+<g id="node3" class="node">
+<title>MulleObjC</title>
+<g id="a_node3"><a xlink:href="https://github.com/mulle-objc/MulleObjC" xlink:title="MulleObjC">
+<polygon fill="lightgrey" stroke="black" points="257.5,-36 165.5,-36 165.5,0 257.5,0 257.5,-36"/>
+<text text-anchor="middle" x="211.5" y="-14.3" font-family="Times,serif" font-size="14.00">MulleObjC</text>
+</a>
+</g>
+</g>
+<!-- objc&#45;compat&#45;&gt;MulleObjC -->
+<g id="edge1" class="edge">
+<title>objc&#45;compat&#45;&gt;MulleObjC</title>
+<path fill="none" stroke="black" d="M159.56,-71.7C168,-63.14 178.32,-52.66 187.54,-43.3"/>
+<polygon fill="black" stroke="black" points="190.11,-45.68 194.64,-36.1 185.13,-40.77 190.11,-45.68"/>
 </g>
 </g>
 </svg>
