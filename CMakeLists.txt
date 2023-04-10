@@ -19,8 +19,8 @@ include( Files)
 
 if( HEADERS_PHASE)
    install( FILES ${INSTALL_PUBLIC_HEADERS}  DESTINATION "include/objc-compat")
-   install( FILES ${INSTALL_PRIVATE_HEADERS} DESTINATION "include/objc-compat/private")
-   install( FILES ${CMAKE_INCLUDES}          DESTINATION "include/objc-compat/cmake")
+   install( FILES ${INSTALL_PRIVATE_HEADERS} DESTINATION "include/objc-compat")
+   install( FILES ${INSTALL_CMAKE_INCLUDES}          DESTINATION "include/objc-compat/cmake")
 
    # short cut out
    if( NOT COMPILE_PHASE AND NOT LINK_PHASE)

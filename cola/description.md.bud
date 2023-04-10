@@ -1,0 +1,5 @@
+This library adds a few functions to portably write various somewhat tricky
+topics such as variable arguments calls. 
+
+It is also the place that includes the required runtime headers depending on
+platform.
