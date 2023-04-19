@@ -1,15 +1,11 @@
 {
    "name" : "objc-compat",
-   "version" : "0.20.2",
+   "version" : "0.20.3",
    "description" : "Glue for Objective-C code to support different Foundations",
    "keywords" : [],
    "license" : "BSD-3-Clause",
    "repo" : "MulleFoundation/objc-compat",
    "src" : [
-      "src/_objc-compat-import-private.h",
-      "src/_objc-compat-import.h",
-      "src/_objc-compat-include-private.h",
-      "src/_objc-compat-include.h",
       "src/apple-alloca-glue.h",
       "src/apple-isa-glue.h",
       "src/apple-message-glue.h",
@@ -23,7 +19,11 @@
       "src/mulle-message-glue.h",
       "src/mulle-object-glue.h",
       "src/mulle-vararg-glue.h",
-      "src/objc-compat.h"
+      "src/objc-compat.h",
+      "src/_objc-compat-import-private.h",
+      "src/_objc-compat-import.h",
+      "src/_objc-compat-include-private.h",
+      "src/_objc-compat-include.h"
    ],
    "dependencies" : {
       "mulle-objc/MulleObjC": "*",
