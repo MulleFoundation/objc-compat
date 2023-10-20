@@ -5,24 +5,24 @@
  *
  *  version:  major, minor, patch
  */
-#define OBJC_COMPAT_VERSION  ((0 << 20) | (20 << 8) | 3)
+#define OBJC__COMPAT_VERSION  ((0 << 20) | (20 << 8) | 4)
 
 
 static inline unsigned int   objc_compat_get_version_major( void)
 {
-   return( OBJC_COMPAT_VERSION >> 20);
+   return( OBJC__COMPAT_VERSION >> 20);
 }
 
 
 static inline unsigned int   objc_compat_get_version_minor( void)
 {
-   return( (OBJC_COMPAT_VERSION >> 8) & 0xFFF);
+   return( (OBJC__COMPAT_VERSION >> 8) & 0xFFF);
 }
 
 
 static inline unsigned int   objc_compat_get_version_patch( void)
 {
-   return( OBJC_COMPAT_VERSION & 0xFF);
+   return( OBJC__COMPAT_VERSION & 0xFF);
 }
 
 

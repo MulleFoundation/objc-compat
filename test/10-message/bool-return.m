@@ -37,7 +37,7 @@ int   main( void)
 	flag = objc_msgSendBOOLReturn( [Foo class], @selector( foo), (id) 1848);
 	fprintf( stderr, "%tx\n", (intptr_t) flag);
 	if( flag)
-		return( 1);
+		return( 2);
 	return( 0);
 }
 

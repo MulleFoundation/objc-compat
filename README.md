@@ -253,6 +253,8 @@ Install the requirements:
 | [MulleObjC](https://github.com/mulle-objc/MulleObjC)             | 💎 A collection of Objective-C root classes for mulle-objc
 | [mulle-objc-compat](https://github.com/mulle-objc/mulle-objc-compat)             | 🍏 Compatibility layer with Apple Objective-C runtime functions
 
+Download the latest [tar](https://github.com/MulleFoundation/objc-compat/archive/refs/tags/latest.tar.gz) or [zip](https://github.com/MulleFoundation/objc-compat/archive/refs/tags/latest.zip) archive and unpack it.
+
 Install **objc-compat** into `/usr/local` with [cmake](https://cmake.org):
 
 ``` sh
