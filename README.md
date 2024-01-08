@@ -8,9 +8,10 @@ topics such as variable arguments calls.
 It is also the place that includes the required runtime headers depending on
 platform.
 
+
 | Release Version                                       | Release Notes
 |-------------------------------------------------------|--------------
-| ![Mulle kybernetiK tag](https://img.shields.io/github/tag//objc-compat.svg?branch=release) [![Build Status](https://github.com//objc-compat/workflows/CI/badge.svg?branch=release)](//github.com//objc-compat/actions)| [RELEASENOTES](RELEASENOTES.md) |
+| ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/objc-compat.svg?branch=release) [![Build Status](https://github.com/MulleFoundation/objc-compat/workflows/CI/badge.svg?branch=release)](//github.com/MulleFoundation/objc-compat/actions) | [RELEASENOTES](RELEASENOTES.md) |
 
 
 ## API
@@ -268,6 +269,6 @@ cmake --install build --config Release
 
 ## Author
 
-[Nat!](https://mulle-kybernetik.com/weblog) for Mulle kybernetiK
+[Nat!](https://mulle-kybernetik.com/weblog) for Mulle kybernetiK  
 
 
