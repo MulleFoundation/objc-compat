@@ -236,8 +236,6 @@ mulle-sde add github:MulleFoundation/objc-compat
 
 ## Install
 
-### Install with mulle-sde
-
 Use [mulle-sde](//github.com/mulle-sde) to build and install objc-compat and all dependencies:
 
 ``` sh
@@ -245,7 +243,7 @@ mulle-sde install --prefix /usr/local \
    https://github.com/MulleFoundation/objc-compat/archive/latest.tar.gz
 ```
 
-### Manual Installation
+### Legacy Installation
 
 Install the requirements:
 
