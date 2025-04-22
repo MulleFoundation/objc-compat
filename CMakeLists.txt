@@ -1,6 +1,6 @@
 cmake_minimum_required( VERSION 3.15)
 
-project( objc-compat VERSION 0.20.5 LANGUAGES C)
+project( objc-compat VERSION 0.20.6 LANGUAGES C)
 
 
 
