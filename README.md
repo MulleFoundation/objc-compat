@@ -9,9 +9,9 @@ It is also the place that includes the required runtime headers depending on
 platform.
 
 
-| Release Version                                       | Release Notes
-|-------------------------------------------------------|--------------
-| ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/objc-compat.svg) [![Build Status](https://github.com/MulleFoundation/objc-compat/workflows/CI/badge.svg)](//github.com/MulleFoundation/objc-compat/actions) | [RELEASENOTES](RELEASENOTES.md) |
+| Release Version                                       | Release Notes  | AI Documentation
+|-------------------------------------------------------|----------------|---------------
+| ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/objc-compat.svg) [![Build Status](https://github.com/MulleFoundation/objc-compat/workflows/CI/badge.svg)](//github.com/MulleFoundation/objc-compat/actions) | [RELEASENOTES](RELEASENOTES.md) | [DeepWiki for objc-compat](https://deepwiki.com/MulleFoundation/objc-compat)
 
 
 ## API
