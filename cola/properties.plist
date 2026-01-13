@@ -3,6 +3,8 @@
    {
       description="🔗 Glue for Objective-C code to support different Foundations";
       domain="github";
+      language="c";
+      dialect="objc";
       name="objc-compat";
       user="MulleFoundation";
       repo="objc-compat";
