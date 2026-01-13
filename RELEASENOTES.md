@@ -1,3 +1,12 @@
+## 0.21.0
+
+feature: add Darwin platform support for dependencies
+
+* MulleObjC and mulle-testallocator can now be linked on Darwin/macOS
+* mulle-objc-compat dependency now available on Darwin
+* MulleObjC-startup can now be built on Darwin
+
+
 ### 0.20.6
 
 Various small improvements

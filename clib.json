@@ -1,6 +1,6 @@
 {
    "name" : "objc-compat",
-   "version" : "0.20.4",
+   "version" : "0.21.0",
    "description" : "🔗 Glue for Objective-C code to support different Foundations",
    "keywords" : [],
    "license" : "BSD-3-Clause",
