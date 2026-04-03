@@ -1,5 +1,8 @@
 # Run tests
 
+
+## Usage
+
 Use `mulle-sde test` or `mulle-sde test` to run the tests. Each test is
 specified by a file with file extensions `.m` or `.aam`. This file
 is compiled and linked with **objc-compat**.
