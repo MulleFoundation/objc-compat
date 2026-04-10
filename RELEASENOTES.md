@@ -1,88 +1,11 @@
-## 0.21.0
-
-feature: add Darwin platform support for dependencies
-
-* MulleObjC and mulle-testallocator can now be linked on Darwin/macOS
-* mulle-objc-compat dependency now available on Darwin
-* MulleObjC-startup can now be built on Darwin
+### 0.21.1
 
 
-### 0.20.6
-
-Various small improvements
-
-### 0.20.5
-
-Various small improvements
-
-### 0.20.4
-
-* Various small improvements
-
-### 0.20.3
-
-* Various small improvements
-
-### 0.20.2
-
-* Various small improvements
-
-### 0.20.1
-
-* Various small improvements
-
-## 0.20.0
-
-* Various small improvements
 
 
-## 0.19.0
-
-* fix wrong ``<stdarg.h>`` inclusion on macOS
-* supoort for ``objc_alloca`` on macOS
-* define ``OBJC_ISA_AVAILABILITY`` on macOS
-* added `typedef Protocol  *PROTOCOL;`
-* adapt to changes in Apple ``objc_msgSend``
-* add ``object_getExtraBytes`` for macOS
-* add `MulleObjCCopyObjects` for macOS (experimental)
 
 
-## 0.18.0
-
-* Various small improvements
 
 
-### 0.17.1
-
-* new mulle-sde project structure
-
-## 0.17.0
-
-* adapt to changes in MulleObjC
-
-
-## 0.16.0
-
-* new release
-
-
-## 0.15.0
-
-* added isa glue
-* added `object_getExtraBytes`
-* added isa
-* added various method callers
-
-
-### 0.14.1
-
-* remove old and disruptive headers
-
-## 0.14.0
-
-* modernize mulle-sde and made version number close to other projects
-
-
-## 0.1.0
-
-* Various small improvements
+* message tests now use `mulle_printf/mulle_fprintf` instead of printf/fprintf for consistent formatting and test harness integration
+* removed generated test headers (test/include.h, test/import.h) so mulle-sde test crafting is used; test README updated with usage notes

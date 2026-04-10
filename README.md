@@ -2,8 +2,9 @@
 
 #### 🔗 Glue for Objective-C code to support different Foundations
 
-This library adds a few functions to portably write various somewhat tricky
-topics such as variable arguments calls. 
+This library adds a few functions to write various somewhat tricky
+topics such as variable arguments calls in a portable fashion across
+various objective-c runtimes.
 
 It is also the place that includes the required runtime headers depending on
 platform.
