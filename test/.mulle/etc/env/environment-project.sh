@@ -38,6 +38,6 @@ export MULLE_SDE_CRAFT_TARGET="craftorder"
 #
 #
 #
-export MULLE_TEST_PLATFORMS="windows"
+
 
 
