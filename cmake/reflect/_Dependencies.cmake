@@ -27,85 +27,93 @@ else()
 endif()
 
 #
-# Generated from sourcetree: AA752614-F078-4EE6-9F21-E234626335B7;mulle-objc-compat;no-all-load,no-cmake-loader,no-cmake-searchpath,no-import;
+# Generated from sourcetree: AA752614-F078-4EE6-9F21-E234626335B7;mulle-objc-compat;no-all-load,no-cmake-loader,no-cmake-searchpath,no-import,no-platform-darwin;
 # Disable with : `mulle-sourcetree mark mulle-objc-compat no-link`
 # Disable for this platform: `mulle-sourcetree mark mulle-objc-compat no-cmake-platform-${MULLE_UNAME}`
 # Disable for a sdk: `mulle-sourcetree mark mulle-objc-compat no-cmake-sdk-<name>`
 #
-if( COLLECT_DEPENDENCY_LIBRARIES_AS_NAMES)
-   list( APPEND DEPENDENCY_LIBRARIES "mulle-objc-compat")
-else()
-   if( NOT MULLE__OBJC__COMPAT_LIBRARY)
-      find_library( MULLE__OBJC__COMPAT_LIBRARY NAMES
-         ${MULLE_PREFERRED_LIBRARY_PREFIX}mulle-objc-compat${CMAKE_DEBUG_POSTFIX}${MULLE_PREFERRED_LIBRARY_SUFFIX}
-         ${MULLE_PREFERRED_LIBRARY_PREFIX}mulle-objc-compat${MULLE_PREFERRED_LIBRARY_SUFFIX}
-         ${MULLE_FALLBACK_LIBRARY_PREFIX}mulle-objc-compat${CMAKE_DEBUG_POSTFIX}${MULLE_FALLBACK_LIBRARY_SUFFIX}
-         ${MULLE_FALLBACK_LIBRARY_PREFIX}mulle-objc-compat${MULLE_FALLBACK_LIBRARY_SUFFIX}
-         mulle-objc-compat
-         NO_CMAKE_SYSTEM_PATH NO_SYSTEM_ENVIRONMENT_PATH NO_CMAKE_FIND_ROOT_PATH
-      )
-      if( NOT MULLE__OBJC__COMPAT_LIBRARY AND NOT DEPENDENCY_IGNORE_SYSTEM_LIBARIES)
-         find_library( MULLE__OBJC__COMPAT_LIBRARY NAMES
-            ${MULLE_PREFERRED_LIBRARY_PREFIX}mulle-objc-compat${CMAKE_DEBUG_POSTFIX}${MULLE_PREFERRED_LIBRARY_SUFFIX}
-            ${MULLE_PREFERRED_LIBRARY_PREFIX}mulle-objc-compat${MULLE_PREFERRED_LIBRARY_SUFFIX}
-            ${MULLE_FALLBACK_LIBRARY_PREFIX}mulle-objc-compat${CMAKE_DEBUG_POSTFIX}${MULLE_FALLBACK_LIBRARY_SUFFIX}
-            ${MULLE_FALLBACK_LIBRARY_PREFIX}mulle-objc-compat${MULLE_FALLBACK_LIBRARY_SUFFIX}
-            mulle-objc-compat
-         )
-      endif()
-      message( STATUS "MULLE__OBJC__COMPAT_LIBRARY is ${MULLE__OBJC__COMPAT_LIBRARY}")
-      #
-      # The order looks ascending, but due to the way this file is read
-      # it ends up being descending, which is what we need.
-      #
-      if( MULLE__OBJC__COMPAT_LIBRARY)
-         #
-         # Add MULLE__OBJC__COMPAT_LIBRARY to DEPENDENCY_LIBRARIES list.
-         # Disable with: `mulle-sourcetree mark mulle-objc-compat no-cmake-add`
-         #
-         list( APPEND DEPENDENCY_LIBRARIES ${MULLE__OBJC__COMPAT_LIBRARY})
-         #
-         # Inherit information from dependency.
-         # Encompasses: no-cmake-searchpath,no-cmake-dependency,no-cmake-loader
-         # Disable with: `mulle-sourcetree mark mulle-objc-compat no-cmake-inherit`
-         #
-         # temporarily expand CMAKE_MODULE_PATH
-         get_filename_component( _TMP_MULLE__OBJC__COMPAT_ROOT "${MULLE__OBJC__COMPAT_LIBRARY}" DIRECTORY)
-         get_filename_component( _TMP_MULLE__OBJC__COMPAT_ROOT "${_TMP_MULLE__OBJC__COMPAT_ROOT}" DIRECTORY)
-         #
-         #
-         # Search for "Definitions.cmake" and "DependenciesAndLibraries.cmake" to include.
-         # Disable with: `mulle-sourcetree mark mulle-objc-compat no-cmake-dependency`
-         #
-         foreach( _TMP_MULLE__OBJC__COMPAT_NAME "mulle-objc-compat")
-            set( _TMP_MULLE__OBJC__COMPAT_DIR "${_TMP_MULLE__OBJC__COMPAT_ROOT}/include/${_TMP_MULLE__OBJC__COMPAT_NAME}/cmake")
-            # use explicit path to avoid "surprises"
-            if( IS_DIRECTORY "${_TMP_MULLE__OBJC__COMPAT_DIR}")
-               list( INSERT CMAKE_MODULE_PATH 0 "${_TMP_MULLE__OBJC__COMPAT_DIR}")
-               # we only want top level INHERIT_OBJC_DEPS, so disable them
-               if( NOT NO_INHERIT_OBJC_DEPS)
-                  set( NO_INHERIT_OBJC_DEPS OFF)
-               endif()
-               list( APPEND _TMP_INHERIT_OBJC_DEPS ${NO_INHERIT_OBJC_DEPS})
-               set( NO_INHERIT_OBJC_DEPS ON)
-               #
-               include( "${_TMP_MULLE__OBJC__COMPAT_DIR}/DependenciesAndLibraries.cmake" OPTIONAL)
-               #
-               list( GET _TMP_INHERIT_OBJC_DEPS -1 NO_INHERIT_OBJC_DEPS)
-               list( REMOVE_AT _TMP_INHERIT_OBJC_DEPS -1)
-               list( REMOVE_ITEM CMAKE_MODULE_PATH "${_TMP_MULLE__OBJC__COMPAT_DIR}")
-               #
-               unset( MULLE__OBJC__COMPAT_DEFINITIONS)
-               unset( MULLE__OBJC__COMPAT_RENDEZVOUS_GLOBALS)
-               include( "${_TMP_MULLE__OBJC__COMPAT_DIR}/Definitions.cmake" OPTIONAL)
-               list( APPEND INHERITED_DEFINITIONS ${MULLE__OBJC__COMPAT_DEFINITIONS})
-               include( "${_TMP_MULLE__OBJC__COMPAT_DIR}/Definitions.cmake" OPTIONAL)
-               list( APPEND RENDEZVOUS_GLOBALS ${MULLE__OBJC__COMPAT_RENDEZVOUS_GLOBALS})
+if( NOT ${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+   if( COLLECT_DEPENDENCY_LIBRARIES_AS_NAMES)
+      list( APPEND DEPENDENCY_LIBRARIES "mulle-objc-compat")
+   else()
+      if( NOT MULLE__OBJC__COMPAT_LIBRARY)
+         foreach( _TMP_MULLE__OBJC__COMPAT_LIBRARY_TARGET mulle-objc-compat)
+            if( TARGET ${_TMP_MULLE__OBJC__COMPAT_LIBRARY_TARGET})
+               set( MULLE__OBJC__COMPAT_LIBRARY ${_TMP_MULLE__OBJC__COMPAT_LIBRARY_TARGET})
                break()
-            else()
-               message( STATUS "${_TMP_MULLE__OBJC__COMPAT_DIR} not found")
             endif()
          endforeach()
+         if( NOT MULLE__OBJC__COMPAT_LIBRARY)
+            find_library( MULLE__OBJC__COMPAT_LIBRARY NAMES
+               ${MULLE_PREFERRED_LIBRARY_PREFIX}mulle-objc-compat${CMAKE_DEBUG_POSTFIX}${MULLE_PREFERRED_LIBRARY_SUFFIX}
+               ${MULLE_PREFERRED_LIBRARY_PREFIX}mulle-objc-compat${MULLE_PREFERRED_LIBRARY_SUFFIX}
+               ${MULLE_FALLBACK_LIBRARY_PREFIX}mulle-objc-compat${CMAKE_DEBUG_POSTFIX}${MULLE_FALLBACK_LIBRARY_SUFFIX}
+               ${MULLE_FALLBACK_LIBRARY_PREFIX}mulle-objc-compat${MULLE_FALLBACK_LIBRARY_SUFFIX}
+               mulle-objc-compat
+               NO_CMAKE_SYSTEM_PATH NO_SYSTEM_ENVIRONMENT_PATH NO_CMAKE_FIND_ROOT_PATH
+            )
+            if( NOT MULLE__OBJC__COMPAT_LIBRARY AND NOT DEPENDENCY_IGNORE_SYSTEM_LIBARIES)
+               find_library( MULLE__OBJC__COMPAT_LIBRARY NAMES
+                  ${MULLE_PREFERRED_LIBRARY_PREFIX}mulle-objc-compat${CMAKE_DEBUG_POSTFIX}${MULLE_PREFERRED_LIBRARY_SUFFIX}
+                  ${MULLE_PREFERRED_LIBRARY_PREFIX}mulle-objc-compat${MULLE_PREFERRED_LIBRARY_SUFFIX}
+                  ${MULLE_FALLBACK_LIBRARY_PREFIX}mulle-objc-compat${CMAKE_DEBUG_POSTFIX}${MULLE_FALLBACK_LIBRARY_SUFFIX}
+                  ${MULLE_FALLBACK_LIBRARY_PREFIX}mulle-objc-compat${MULLE_FALLBACK_LIBRARY_SUFFIX}
+                  mulle-objc-compat
+               )
+            endif()
+         endif()
+         message( STATUS "MULLE__OBJC__COMPAT_LIBRARY is ${MULLE__OBJC__COMPAT_LIBRARY}")
+      endif()
+      if( MULLE__OBJC__COMPAT_LIBRARY)
+            #
+            # Add MULLE__OBJC__COMPAT_LIBRARY to DEPENDENCY_LIBRARIES list.
+            # Disable with: `mulle-sourcetree mark mulle-objc-compat no-cmake-add`
+            #
+            if( NOT ${MULLE__OBJC__COMPAT_LIBRARY} IN_LIST DEPENDENCY_LIBRARIES)
+               list( APPEND DEPENDENCY_LIBRARIES ${MULLE__OBJC__COMPAT_LIBRARY})
+            endif()
+            #
+            # Inherit information from dependency.
+            # Encompasses: no-cmake-searchpath,no-cmake-dependency,no-cmake-loader
+            # Disable with: `mulle-sourcetree mark mulle-objc-compat no-cmake-inherit`
+            #
+            # temporarily expand CMAKE_MODULE_PATH
+            get_filename_component( _TMP_MULLE__OBJC__COMPAT_ROOT "${MULLE__OBJC__COMPAT_LIBRARY}" DIRECTORY)
+            get_filename_component( _TMP_MULLE__OBJC__COMPAT_ROOT "${_TMP_MULLE__OBJC__COMPAT_ROOT}" DIRECTORY)
+            #
+            #
+            # Search for "Definitions.cmake" and "DependenciesAndLibraries.cmake" to include.
+            # Disable with: `mulle-sourcetree mark mulle-objc-compat no-cmake-dependency`
+            #
+            foreach( _TMP_MULLE__OBJC__COMPAT_NAME "mulle-objc-compat")
+               set( _TMP_MULLE__OBJC__COMPAT_DIR "${_TMP_MULLE__OBJC__COMPAT_ROOT}/include/${_TMP_MULLE__OBJC__COMPAT_NAME}/cmake")
+               # use explicit path to avoid "surprises"
+               if( IS_DIRECTORY "${_TMP_MULLE__OBJC__COMPAT_DIR}")
+                  list( INSERT CMAKE_MODULE_PATH 0 "${_TMP_MULLE__OBJC__COMPAT_DIR}")
+                  # we only want top level INHERIT_OBJC_DEPS, so disable them
+                  if( NOT NO_INHERIT_OBJC_DEPS)
+                     set( NO_INHERIT_OBJC_DEPS OFF)
+                  endif()
+                  list( APPEND _TMP_INHERIT_OBJC_DEPS ${NO_INHERIT_OBJC_DEPS})
+                  set( NO_INHERIT_OBJC_DEPS ON)
+                  #
+                  include( "${_TMP_MULLE__OBJC__COMPAT_DIR}/DependenciesAndLibraries.cmake" OPTIONAL)
+                  #
+                  list( GET _TMP_INHERIT_OBJC_DEPS -1 NO_INHERIT_OBJC_DEPS)
+                  list( REMOVE_AT _TMP_INHERIT_OBJC_DEPS -1)
+                  list( REMOVE_ITEM CMAKE_MODULE_PATH "${_TMP_MULLE__OBJC__COMPAT_DIR}")
+                  #
+                  unset( MULLE__OBJC__COMPAT_DEFINITIONS)
+                  unset( MULLE__OBJC__COMPAT_RENDEZVOUS_GLOBALS)
+                  include( "${_TMP_MULLE__OBJC__COMPAT_DIR}/Definitions.cmake" OPTIONAL)
+                  list( APPEND INHERITED_DEFINITIONS ${MULLE__OBJC__COMPAT_DEFINITIONS})
+                  include( "${_TMP_MULLE__OBJC__COMPAT_DIR}/Definitions.cmake" OPTIONAL)
+                  list( APPEND RENDEZVOUS_GLOBALS ${MULLE__OBJC__COMPAT_RENDEZVOUS_GLOBALS})
+                  break()
+               else()
+                  message( STATUS "${_TMP_MULLE__OBJC__COMPAT_DIR} not found")
+               endif()
+            endforeach()
       else()
          # Disable with: `mulle-sourcetree mark mulle-objc-compat no-require-link`
          message( SEND_ERROR "MULLE__OBJC__COMPAT_LIBRARY was not found in ${MULLE_PREFERRED_LIBRARY_PREFIX}mulle-objc-compat${CMAKE_DEBUG_POSTFIX}${MULLE_PREFERRED_LIBRARY_SUFFIX}

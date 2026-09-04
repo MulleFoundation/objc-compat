@@ -29,13 +29,13 @@ int   main( void)
 	BOOL   flag;
 	
 	flag = objc_msgSendBOOLReturn( [Foo class], @selector( bar:), (id) 1848);
-	mulle_fprintf( stderr, "%tx\n", (intptr_t) flag);
+	fprintf( stderr, "%tx\n", (intptr_t) flag);
 	if( flag != YES)
 		return( 1);
 
 	// this works when BOOL is char
 	flag = objc_msgSendBOOLReturn( [Foo class], @selector( foo), (id) 1848);
-	mulle_fprintf( stderr, "%tx\n", (intptr_t) flag);
+	fprintf( stderr, "%tx\n", (intptr_t) flag);
 	if( flag)
 		return( 2);
 	return( 0);
