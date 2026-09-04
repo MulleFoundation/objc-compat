@@ -16,7 +16,7 @@
 	  name:(char *) name
 	  year:(uintptr_t) year
 {
-	mulle_printf( "%s %s %td\n", tag, name, year);
+	printf( "%s %s %td\n", tag, name, year);
 	return( (id) 0x1848);
 }
 
@@ -34,7 +34,7 @@ int   main( void)
 	id   obj;
 	
 	obj = objc_msgSend3( [Foo class], @selector( tag:name:year:), (id) "VfL", (id) "Bochum", (id) 1848);
-	mulle_printf( "%tx\n", (intptr_t) obj);
+	printf( "%tx\n", (intptr_t) obj);
 	if( obj != (id) 0x1848)
 		return( 1);
 	return( 0);

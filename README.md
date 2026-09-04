@@ -191,6 +191,11 @@ static void  get_extra_bytes( id self)
 
 
 
+
+## Documentation & Guides
+
+* [API Summary](asset/dox/api/toc)
+
 ## Usage
 
 [mulle-gdb](//github.com/mulle-cc/mulle-gdb) recognizes a lot of the
