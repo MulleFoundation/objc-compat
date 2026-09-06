@@ -1,12 +1,12 @@
 {
    "name" : "objc-compat",
-   "version" : "0.21.2",
+   "version" : "0.21.3",
    "description" : "🔗 Glue for Objective-C code to support different Foundations",
    "keywords" : [],
    "license" : "BSD-3-Clause",
    "repo" : "MulleFoundation/objc-compat",
    "src" : [
-      "asset/dox/TOC.md",
+      "asset/dox/api/toc/index.md",
       "src/apple-alloca-glue.h",
       "src/apple-isa-glue.h",
       "src/apple-message-glue.h",
