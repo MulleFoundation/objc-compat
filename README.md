@@ -249,7 +249,7 @@ mulle-sde install --prefix /usr/local \
    https://github.com/MulleFoundation/objc-compat/archive/latest.tar.gz
 ```
 
-### Legacy Installation
+### Manual Installation
 
 Install the requirements:
 
